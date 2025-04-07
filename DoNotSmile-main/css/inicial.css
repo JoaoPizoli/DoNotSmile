@@ -1,0 +1,148 @@
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Just Me Again Down Here', cursive;
+    line-height: 1.6;
+    color: #000000;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-img {
+    width: 80px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.logo-text {
+    font-size: 5rem;
+    font-weight: 400;
+    transform: rotate(-0.55deg);
+}
+
+/* Menu de navegação */
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+}
+
+.menu-item img {
+    width: 50px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.menu-link {
+    font-size: 3.5rem;
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s;
+}
+
+.menu-link:hover {
+    color: #b5b5b5;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+footer p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Media queries para responsividade */
+@media screen and (max-width: 768px) {
+    .logo-text {
+        font-size: 4rem;
+    }
+    
+    .logo-img {
+        width: 60px;
+    }
+    
+    .menu-link {
+        font-size: 3rem;
+    }
+    
+    .menu-item img {
+        width: 40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo-text {
+        font-size: 3rem;
+    }
+    
+    .logo-img {
+        width: 40px;
+        margin-right: 10px;
+    }
+    
+    .menu-link {
+        font-size: 2.5rem;
+    }
+    
+    .menu-item img {
+        width: 30px;
+        margin-right: 10px;
+    }
+    
+    .menu {
+        gap: 20px;
+    }
+}

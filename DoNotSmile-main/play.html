@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/play.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&display=swap" rel="stylesheet">
+    <link rel="icon" href="svgs/lucide_smile.svg" type="image/svg+xml">
+    <title>Jogar - DoNotSmile</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">
+          <img class="logo-img" src="logos/Group.svg" alt="DoNotSmile Logo" />
+          <h1 class="logo-text">DoNotSmile</h1>
+        </div>
+        <nav class="menu">
+          <ul>
+            <li><a href="inicial.html">Início</a></li>
+            <li><a href="play.html" class="active">Jogar</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <div class="game-container">
+          <div class="video-container">
+            <video
+              id="meuVideo"
+              playsinline
+              hidden
+              controls
+            >
+              <source src="video memes/clain.mp4" type="video/mp4"/>
+            </video>
+          </div>
+
+          <div class="streak-counter">
+            <span id="streak">streak: 0</span>
+          </div>
+
+          <div class="controls">
+            <div class="control-button btn-ri" id="ri" onclick="riu()">
+              <img src="svgs/sad.svg" alt="Triste" />
+              <span>Ri</span>
+            </div>
+            <div class="control-button btn-play" id="botaoplay" onclick="mostrarVideo()">
+              Play
+            </div>
+            <div class="control-button btn-numri" id="numri" onclick="strike()">
+              <img src="svgs/serio.svg" alt="Sério" />
+              <span>Num Ri</span>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p>Created by: João Pedro Pizoli Carvalho for Global Game Jam</p>
+        <p>&copy; 2024 DoNotSmile - Todos os direitos reservados</p>
+      </footer>
+    </div>
+
+    <script>
+      var videos = [
+        "video memes/clain.mp4",
+        "video memes/coronel.mp4",
+        "video memes/floresta.mp4",
+        "video memes/melecura.mp4",
+        "video memes/nuvem.mp4",
+        "video memes/pe.mp4",
+        "video memes/piazim.mp4",
+        "video memes/pull.mp4",
+        "video memes/richard.mp4",
+        "video memes/vara.mp4",
+        "video memes/bibiiii.mp4",
+        "video memes/galo kenny dançando (360p).mp4"
+      ];
+      var indiceAtual = 0;
+      
+      // Quando a página é carregada, o vídeo fica escondido inicialmente
+      document.addEventListener('DOMContentLoaded', function() {
+        var video = document.getElementById("meuVideo");
+        video.hidden = true; // Certifique-se de que o vídeo está oculto no início
+      });
+      
+      function mostrarVideo() {
+        var btp = document.getElementById("botaoplay");
+        var video = document.getElementById("meuVideo");
+        
+        if (btp.textContent === "Replay?") {
+          indiceAtual = 0;
+          video.src = videos[indiceAtual];
+          video.hidden = false;
+          video.play(); // Garante que o vídeo começa a reproduzir
+          btp.textContent = "Próximo";
+          return;
+        }
+        
+        if (video.hidden) {
+          video.hidden = false;
+          video.play(); // Garante que o vídeo começa a reproduzir
+          btp.textContent = "Próximo";
+        } else {
+          indiceAtual = (indiceAtual + 1) % videos.length;
+          video.src = videos[indiceAtual];
+          video.play(); // Garante que o vídeo começa a reproduzir
+          
+          if (indiceAtual === videos.length - 1) {
+            btp.textContent = "Cabo";
+          }
+        }
+        
+        if (btp.textContent === "Cabo") {
+          btp.textContent = "Replay?";
+        }
+      }
+      
+      var contador = 0;
+      
+      function strike() {
+        var strike = document.getElementById("streak");
+        contador++;
+        strike.textContent = `streak: ${contador}`;
+      }
+      
+      function riu() {
+        var reset = document.getElementById("streak");
+        reset.textContent = `streak: ${"0"}`;
+        contador = 0;
+      }
+    </script>
+  </body>
+</html>

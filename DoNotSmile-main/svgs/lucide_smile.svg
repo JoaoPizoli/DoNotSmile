@@ -1,0 +1,13 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="lucide:smile" clip-path="url(#clip0_1_10)">
+<g id="Group">
+<path id="Vector" d="M43.3735 80.2703C63.3356 80.2703 79.5181 63.9347 79.5181 43.7838C79.5181 23.6329 63.3356 7.2973 43.3735 7.2973C23.4114 7.2973 7.22891 23.6329 7.22891 43.7838C7.22891 63.9347 23.4114 80.2703 43.3735 80.2703Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M28.9157 51.0811C28.9157 51.0811 34.3374 58.3784 43.3735 58.3784C52.4096 58.3784 57.8313 51.0811 57.8313 51.0811M32.5301 32.8378H32.5663M54.2169 32.8378H54.253" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_1_10">
+<rect width="80" height="80" fill="white"/>
+</clipPath>
+</defs>
+</svg>

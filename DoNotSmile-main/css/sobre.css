@@ -1,0 +1,147 @@
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Just Me Again Down Here', cursive;
+    line-height: 1.6;
+    color: #000000;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header e navegação */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    margin-bottom: 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo-img {
+    width: 60px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.logo-text {
+    font-size: 4rem;
+    font-weight: 400;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    justify-content: center;
+}
+
+.menu a {
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: #000;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.menu a:hover, .menu a.active {
+    color: #555;
+}
+
+.menu a.active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    bottom: -5px;
+    left: 0;
+}
+
+/* Conteúdo principal */
+main {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.about-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-text p {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    border-top: 1px solid #eee;
+}
+
+footer p {
+    font-size: 1.2rem;
+}
+
+/* Media queries para responsividade */
+@media screen and (max-width: 768px) {
+    .logo-text {
+        font-size: 3rem;
+    }
+    
+    .menu ul {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .menu a {
+        font-size: 1.5rem;
+    }
+    
+    .about-text p {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo-text {
+        font-size: 2.5rem;
+    }
+    
+    .logo-img {
+        width: 40px;
+    }
+    
+    .menu ul {
+        gap: 10px;
+    }
+    
+    .about-text p {
+        font-size: 1.3rem;
+    }
+}
